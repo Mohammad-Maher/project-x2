@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_ui_kit/models/user.dart';
-import 'package:flutter_ecommerce_ui_kit/services/auth_service.dart';
+import '../models/user.dart';
+import '../services/auth_service.dart';
 
 class AuthBlock extends ChangeNotifier {
   AuthBlock() {
@@ -24,10 +24,12 @@ class AuthBlock extends ChangeNotifier {
     _loading = loadingState;
     notifyListeners();
   }
+
   set loadingType(String loadingType) {
     _loadingType = loadingType;
     notifyListeners();
   }
+
   // Loading
   bool _isLoggedIn = false;
   bool get isLoggedIn => _isLoggedIn;
@@ -41,6 +43,7 @@ class AuthBlock extends ChangeNotifier {
   Map get user => _user;
   setUser() async {
     _user = await _authService.getUser();
+    // ignore: unnecessary_null_comparison
     isLoggedIn = _user == null ? false : true;
     notifyListeners();
   }

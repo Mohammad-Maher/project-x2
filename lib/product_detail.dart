@@ -19,13 +19,13 @@ class _ProductsState extends State<Products> {
   var numberOfPresses = 0;
   var sizeChosen = 'M';
   List sizes = <String>['S', 'M', 'L', 'XL '];
-  var _isFavourite = false;
+  // var _isFavourite = false;
 
   @override
   Widget build(BuildContext context) {
     final cartInfo = Provider.of<Cart>(context);
     final itemContent =
-    ModalRoute.of(context)!.settings.arguments as ProductLayout;
+        ModalRoute.of(context)!.settings.arguments as ProductLayout;
     return Scaffold(
       appBar: AppBar(
         title: Text('Product Detail'),
@@ -48,7 +48,7 @@ class _ProductsState extends State<Products> {
                     // placeholder: (context, url) =>
                     //     Center(child: CircularProgressIndicator()),
                     errorWidget: (context, url, error) =>
-                    new Icon(Icons.error_sharp),
+                        new Icon(Icons.error_sharp),
                   ),
                 ),
               ),
@@ -156,7 +156,7 @@ class _ProductsState extends State<Products> {
                                   onPressed: () {
                                     setState(() {
                                       itemContent.isFavourite =
-                                      !itemContent.isFavourite;
+                                          !itemContent.isFavourite;
                                     });
                                   },
                                   icon: Icon(

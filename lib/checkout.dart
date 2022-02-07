@@ -21,6 +21,7 @@ class CheckoutState extends State<Checkout> {
   String expiryDate = '';
   String cardHolderName = '';
   String cvvCode = '';
+  String cvvValidationMessage = 'Please input a valid CVV';
   bool isCvvFocused = false;
   bool useGlassMorphism = false;
   bool useBackgroundImage = false;
@@ -56,7 +57,7 @@ class CheckoutState extends State<Checkout> {
                   fit: BoxFit.fill,
                 )
               : null,
-          color: Colors.blueGrey,
+          color: Colors.grey[800],
         ),
         child: SafeArea(
           child: Column(
@@ -75,7 +76,7 @@ class CheckoutState extends State<Checkout> {
                 obscureCardNumber: true,
                 obscureCardCvv: true,
                 isHolderNameVisible: true,
-                cardBgColor: Colors.blue,
+                cardBgColor: Colors.black,
                 backgroundImage:
                     useBackgroundImage ? 'assets/card_bg.png' : null,
                 isSwipeGestureEnabled: true,
@@ -115,6 +116,7 @@ class CheckoutState extends State<Checkout> {
                           labelStyle: const TextStyle(color: Colors.white),
                           focusedBorder: border,
                           enabledBorder: border,
+
                         ),
                         expiryDateDecoration: InputDecoration(
                           hintStyle: const TextStyle(color: Colors.white),
@@ -212,7 +214,7 @@ class CheckoutState extends State<Checkout> {
                                           // Navigator.of(ctx).pop();
 
                                           Navigator.pushReplacementNamed(
-                                              context, '/');
+                                              context, '/home');
                                         },
                                         child: Text('OK')),
                                   ],

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter_ecommerce_ui_kit/login&signup/screens.dart';
+import 'package:flutter_ecommerce_ui_kit/login&signup/login-screen.dart';
+import 'package:flutter_ecommerce_ui_kit/login&signup/sign_up.dart';
+import './admin.dart';
 import 'package:flutter_ecommerce_ui_kit/providers/cart_provider.dart';
+import './providers/store_provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_ecommerce_ui_kit/blocks/auth_block.dart';
 import 'package:flutter_ecommerce_ui_kit/cart.dart';
@@ -10,15 +13,19 @@ import 'package:flutter_ecommerce_ui_kit/home/home.dart';
 import 'package:flutter_ecommerce_ui_kit/localizations.dart';
 import 'package:flutter_ecommerce_ui_kit/product_detail.dart';
 import 'package:provider/provider.dart';
+import './edit_products.dart';
 import './cart.dart';
 import './checkout.dart';
+import 'login&signup/forgot-password.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // final Locale locale = Locale('en');
+
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider<AuthBlock>.value(value: AuthBlock()),
       ChangeNotifierProvider<Cart>.value(value: Cart()),
+      ChangeNotifierProvider<StoreContent>.value(value: StoreContent()),
     ],
     child: MaterialApp(
       localizationsDelegates: [
@@ -53,9 +60,11 @@ void main() {
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => LoginScreen(),
         '/forgot': (BuildContext context) => ForgotPassword(),
-        '/create': (BuildContext context) => CreateNewAccount(),
+        '/signup': (BuildContext context) => Signup(),
         '/home': (BuildContext context) => Home(),
         Products.routname: (BuildContext context) => Products(),
+        Admin.routename: (BuildContext context) => Admin(),
+        EditProducts.routename: (BuildContext context) => EditProducts(),
         Categorise.routeName: (BuildContext context) => Categorise(),
         CartScreen.routeNeme: (BuildContext context) => CartScreen(),
         Checkout.routeName: (BuildContext context) => Checkout(),

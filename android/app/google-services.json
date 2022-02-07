@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "82470569483",
+    "project_id": "university-project-c7f9c",
+    "storage_bucket": "university-project-c7f9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82470569483:android:f31e1962ba51a22004290e",
+        "android_client_info": {
+          "package_name": "com.furqan.flutter_ecommerce_ui_kit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "82470569483-jq0rlhbejpkoaq9dpbil5guv7l7bg097.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8VCXxB3wE2qSbwQG_fw7-otCVyG-MrJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "82470569483-jq0rlhbejpkoaq9dpbil5guv7l7bg097.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
